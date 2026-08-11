@@ -26,5 +26,41 @@ public class BST {
         else return node.height;
     }
 
-    
+    public boolean isEmpty() {
+        return root == null;
+    }
+
+    public void insert(int value) {
+        if(root == null) {
+            root = new Node(value);
+        }
+        else {
+            insert(value, root);
+        }
+    }
+
+    private Node insert(int value, Node node) {
+        if(node == null) {
+            node = new Node(value);
+            return node;
+        }
+
+        if(value < node.val) {
+            node.left = insert(value, node.left);
+        }
+
+        if(value > node.val) {
+            node.right = insert(value, node.right);
+        }
+
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+
+        return node;
+    }
+
+    public boolean balancedTree() {
+        return balancedTree(root);
+    }
+
+    public 
 }
