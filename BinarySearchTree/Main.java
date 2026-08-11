@@ -14,6 +14,8 @@ public class Main {
 
         Arrays.sort(ar);
         bst.populateSorted(ar);
-        bst.display();
+//        bst.display();
+
+        bst.
     }
 }

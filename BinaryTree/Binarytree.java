@@ -71,6 +71,21 @@ public class Binarytree {
         display(node.left, level + 1);
     }
 
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(Node node) {
+        if(node == null) {
+            return;
+        }
+
+        System.out.print(node.val + " -> ");
+
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
 
 
 }

@@ -8,6 +8,8 @@ public class Main {
         Binarytree bt = new Binarytree();
         bt.populate(in);
 
-        bt.display();
+//        bt.display();
+
+        bt.preOrder();
     }
 }

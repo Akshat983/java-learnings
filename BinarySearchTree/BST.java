@@ -1,5 +1,7 @@
 package JavaByKK.BinarySearchTree;
 
+import JavaByKK.BinaryTree.Binarytree;
+
 public class BST {
     private static class Node {
         private int val;
@@ -99,5 +101,20 @@ public class BST {
         this.insert(nums[mid]);
         populateSorted(nums, st, mid);
         populateSorted(nums, mid+1, end);
+    }
+
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(Node node) {
+        if(node == null) {
+            return;
+        }
+
+        System.out.print(node.val + " -> ");
+
+        preOrder(node.left);
+        preOrder(node.right);
     }
 }
