@@ -30,6 +30,7 @@ public class Binarytree {
         root = new Node(val);
 
         populate(sc, root);
+        System.out.println("Auto GitHub test");
     }
 
     private void populate(Scanner sc, Node root) {
