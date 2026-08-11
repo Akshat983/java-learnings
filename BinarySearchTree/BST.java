@@ -62,5 +62,9 @@ public class BST {
         return balancedTree(root);
     }
 
-    public 
+    public boolean balancedTree(Node node) {
+        if(node == null) return true;
+
+        return (Math.abs(height(node.left) - height(node.right)) <= 1) && balancedTree(node.left) && balancedTree(node.right);
+    }
 }
