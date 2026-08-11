@@ -67,4 +67,23 @@ public class BST {
 
         return (Math.abs(height(node.left) - height(node.right)) <= 1) && balancedTree(node.left) && balancedTree(node.right);
     }
+
+    public void display() {
+        display(this.root, "The root is: ");
+    }
+
+    private void display(Node node, String details) {
+        if(node == null) return;
+
+        System.out.println(details + node.val);
+
+        display(node.left, "The Left node of " + node.val + "is: ");
+        display(node.right, "The Right node of " + node.val + "is: ");
+    }
+
+    public void populate(int[] ar) {
+        for (int i = 0; i < ar.length; i++) {
+            insert(ar[i]);
+        }
+    }
 }
