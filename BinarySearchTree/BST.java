@@ -22,8 +22,8 @@ public class BST {
     }
 
     public int height(Node node) {
-        if(root == null) return -1;
-        else return node.height;
+        if(node == null) return -1;
+        return node.height;
     }
 
     public boolean isEmpty() {
@@ -77,13 +77,27 @@ public class BST {
 
         System.out.println(details + node.val);
 
-        display(node.left, "The Left node of " + node.val + "is: ");
-        display(node.right, "The Right node of " + node.val + "is: ");
+        display(node.left, "The Left node of " + node.val + " is: ");
+        display(node.right, "The Right node of " + node.val + " is: ");
     }
 
     public void populate(int[] ar) {
         for (int i = 0; i < ar.length; i++) {
             insert(ar[i]);
         }
+    }
+
+    public void populateSorted(int[] nums) {
+        populateSorted(nums, 0, nums.length);
+    }
+
+    private void populateSorted(int[] nums, int st, int end) {
+        if(st >= end) return;
+
+        int mid = (st + end) / 2;
+
+        this.insert(nums[mid]);
+        populateSorted(nums, st, mid);
+        populateSorted(nums, mid+1, end);
     }
 }
