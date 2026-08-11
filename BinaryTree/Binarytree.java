@@ -1,5 +1,7 @@
 package JavaByKK.BinaryTree;
 
+import JavaByKK.BinarySearchTree.BST;
+
 import java.util.Scanner;
 
 public class Binarytree {
@@ -87,5 +89,34 @@ public class Binarytree {
     }
 
 
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    private void postOrder(Node node) {
+        if(node == null) {
+            return;
+        }
+
+        postOrder(node.left);
+        postOrder(node.right);
+
+        System.out.print(node.val + " -> ");
+
+    }
+
+    public void inOrder() {
+        inOrder(root);
+    }
+
+    private void inOrder(Node node) {
+        if(node == null) {
+            return;
+        }
+
+        inOrder(node.left);
+        System.out.print(node.val + " -> ");
+        inOrder(node.right);
+    }
 
 }

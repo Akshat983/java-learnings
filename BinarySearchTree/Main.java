@@ -16,6 +16,6 @@ public class Main {
         bst.populateSorted(ar);
 //        bst.display();
 
-        bst.
+        bst.inOrder();  // PRINTS THE SORTED DATA
     }
 }
