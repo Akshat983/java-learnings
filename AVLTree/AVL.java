@@ -22,7 +22,9 @@ public class AVL {
     public AVL() {
     }
 
-    public 
+    public int height() {
+        return height(root);
+    }
 
     public int height(Node node) {
         if(node == null) return -1;
@@ -34,20 +36,17 @@ public class AVL {
     }
 
     public void insert(int value) {
-        insert(value, root);
+        root = insert(value, root);
     }
 
     private Node insert(int value, Node node) {
         if(node == null) {
-            node = new Node(value);
-            return node;
+            return new Node(value);
         }
 
         if(value < node.val) {
             node.left = insert(value, node.left);
-        }
-
-        if(value > node.val) {
+        } else if(value > node.val) {
             node.right = insert(value, node.right);
         }
 
@@ -55,6 +54,7 @@ public class AVL {
 
         return rotate(node);
     }
+
 
     private Node rotate(Node node) {
         //LEFT HEAVY
