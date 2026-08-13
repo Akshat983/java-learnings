@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class SumOfAllElemsOfARowInPascalTri {
     public static void main(String[] args) {
         /*

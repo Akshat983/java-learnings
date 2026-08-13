@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class NewtonRaphsonSQRT {
     public static void main(String[] args) {
         int n = 40;

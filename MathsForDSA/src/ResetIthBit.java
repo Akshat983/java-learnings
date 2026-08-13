@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class ResetIthBit {
     public static void main(String[] args) {
         int num = 44; // 101100

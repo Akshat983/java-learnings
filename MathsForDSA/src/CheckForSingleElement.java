@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class CheckForSingleElement {
     public static void main(String[] args) {
         int[] ar = {2, 3, 4, 1, 2, 1, 3, 6, 4};

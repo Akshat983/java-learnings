@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class XORFromZeroTillN {
     public static void main(String[] args) {
         int n = 5;

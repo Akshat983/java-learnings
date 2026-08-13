@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class GCDandLCM {
     public static void main(String[] args) {
         int a = 8, b = 10;

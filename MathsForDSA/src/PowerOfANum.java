@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class PowerOfANum {
     public static void main(String[] args) {
         int num = 3;

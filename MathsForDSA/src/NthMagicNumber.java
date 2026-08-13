@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 import java.util.*;
 public class NthMagicNumber {
     public static void main(String[] args) {

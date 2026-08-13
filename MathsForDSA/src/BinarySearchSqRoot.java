@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 import java.util.*;
 public class BinarySearchSqRoot {
     public static void main(String[] args) {

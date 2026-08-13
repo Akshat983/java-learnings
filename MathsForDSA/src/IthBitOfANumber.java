@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class IthBitOfANumber {
     public static void main(String[] args) {
         int num = 47;   // 101111

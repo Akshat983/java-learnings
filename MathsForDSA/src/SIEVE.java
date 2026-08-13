@@ -1,3 +1,5 @@
+package JavaByKK.MathsForDSA.src;
+
 public class SIEVE {
     public static void main(String[] args) {
         sieve(40);
