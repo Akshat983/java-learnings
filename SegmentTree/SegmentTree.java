@@ -2,13 +2,7 @@ package JavaByKK.SegmentTree;
 
 public class SegmentTree {
 
-    Node root;
-
-    static void main(String[] args) {
-        int[] ar = {3, 8, 6, 7, -2, -8, 4, 9};
-
-        SegmentTree tree = new SegmentTree(ar);
-    }
+    private Node root;
 
     private static class Node {
         int startInterval;
@@ -59,6 +53,25 @@ public class SegmentTree {
         return query(node.left, qsi, qei) + query(node.right, qsi, qei);
     }
 
+    public void update(int data, int index) {
+        this.root.data = update(this.root, data, index);
+    }
+
+    private int update(Node node, int data, int index) {
+        //Lies in range
+        if(node.startInterval <= index && node.endInterval >= index) {
+            if(node.startInterval == index && node.endInterval == index) {
+                node.data = data;
+                return data;
+            }
+            else {
+                node.data = update(node.left, data, index) + update(node.right, data, index);
+                return node.data;
+            }
+        }
+        return node.data;
+    }
+
     public void display() {
         display(this.root);
     }
@@ -68,20 +81,22 @@ public class SegmentTree {
 
         //Left Node
         if(node.left != null) {
-            str = "Interval: [" + node.left.startInterval + "-" + node.left.endInterval + "]" + "Data: " + node.left.data + "=>";
+            str += "Interval: [" + node.left.startInterval + "-" + node.left.endInterval + "]" + "Data: " + node.left.data + "=>";
         } else {
-            str = "No left Node";
+            str += "No left Node";
         }
 
         //Current Node
-        str = "Interval: [" + node.startInterval + "-" + node.endInterval + "]" + "Data: " + node.data + "<=";
+        str += "Interval: [" + node.startInterval + "-" + node.endInterval + "]" + "Data: " + node.data + "<=";
 
         //Right Node
         if(node.right != null) {
-            str = "Interval: [" + node.right.startInterval + "-" + node.right.endInterval + "]" + "Data: " + node.right.data;
+            str += "Interval: [" + node.right.startInterval + "-" + node.right.endInterval + "]" + "Data: " + node.right.data;
         } else {
-            str = "No right Node";
+            str += "No right Node";
         }
+
+        System.out.println(str + "\n");
 
         if(node.left != null) {
             display(node.left);
