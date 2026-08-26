@@ -46,7 +46,48 @@ public class SegmentTree {
         return node;
     }
 
+    public int query(int qsi, int qei) {
+        return query(this.root, qsi, qei);
+    }
+
+    private int query(Node node, int qsi, int qei) {
+        if(node.startInterval >= qsi && node.endInterval <= qei) {
+            return node.data;
+        } else if(node.startInterval > qei || node.endInterval < qsi) {
+            return 0;
+        }
+        return query(node.left, qsi, qei) + query(node.right, qsi, qei);
+    }
+
     public void display() {
-        
+        display(this.root);
+    }
+
+    private void display(Node node) {
+        String str = "";
+
+        //Left Node
+        if(node.left != null) {
+            str = "Interval: [" + node.left.startInterval + "-" + node.left.endInterval + "]" + "Data: " + node.left.data + "=>";
+        } else {
+            str = "No left Node";
+        }
+
+        //Current Node
+        str = "Interval: [" + node.startInterval + "-" + node.endInterval + "]" + "Data: " + node.data + "<=";
+
+        //Right Node
+        if(node.right != null) {
+            str = "Interval: [" + node.right.startInterval + "-" + node.right.endInterval + "]" + "Data: " + node.right.data;
+        } else {
+            str = "No right Node";
+        }
+
+        if(node.left != null) {
+            display(node.left);
+        }
+        if(node.right != null) {
+            display(node.right);
+        }
     }
 }
