@@ -27,6 +27,26 @@ public class SegmentTree {
         this.root = constructTree(ar, 0, ar.length - 1);
     }
 
-    private Node constructTree(int[] ar, int i, int i1) {
+    private Node constructTree(int[] ar, int start, int end) {
+        //Base Case : Node = Leaf Node
+        if(start == end) {
+            Node leaf = new Node(start, end);
+            leaf.data = ar[start];
+            return leaf;
+        }
+
+        Node node = new Node(start, end);
+
+        int mid = (start + end) / 2;
+
+        node.left = constructTree(ar, start, mid);
+        node.right = constructTree(ar, mid + 1, end);
+
+        node.data = node.left.data + node.right.data;
+        return node;
+    }
+
+    public void display() {
+        
     }
 }
