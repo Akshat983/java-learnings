@@ -1,6 +1,6 @@
 package JavaByKK.HandleLargeStrings;
 
-public class StringBuffer {
+public class StringBufferEx {
     static void main(String[] args) {
 
         //Constructor 1
@@ -23,5 +23,8 @@ public class StringBuffer {
         sb.reverse();
 
         System.out.println(sb);
+
+        //remove white spaces
+        
     }
 }
