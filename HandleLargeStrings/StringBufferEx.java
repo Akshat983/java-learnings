@@ -1,5 +1,8 @@
 package JavaByKK.HandleLargeStrings;
 
+import java.text.DecimalFormat;
+import java.util.Arrays;
+
 public class StringBufferEx {
     static void main(String[] args) {
 
@@ -25,6 +28,16 @@ public class StringBufferEx {
         System.out.println(sb);
 
         //remove white spaces
-        
+        String str = "wfgdg  rtg rsegfeggfe   fg";
+        System.out.println(str.replaceAll("\\s", ""));
+
+        //split
+        String st = "wef rtshdb szdgb   dgfm";
+        String[] sta = st.split(" ");
+        System.out.println(Arrays.toString(sta));
+
+        //rounding off (DECIMAL FORMAT)
+        DecimalFormat df = new DecimalFormat("000.0000");
+        System.out.println(df.format(34.435351));
     }
 }
