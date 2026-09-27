@@ -38,6 +38,6 @@ public class StringBufferEx {
 
         //rounding off (DECIMAL FORMAT)
         DecimalFormat df = new DecimalFormat("000.0000");
-        System.out.println(df.format(34.435351));
+        System.out.println(df.format(4.435351));
     }
 }
