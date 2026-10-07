@@ -14,11 +14,11 @@ public class leetcode_856_score_of_parenthesis {
             else c--;
             if(c == 0) {
                 if(i == end) {
-                    if(i - 1 == st) return 2;
+                    if(i - 1 == st) return 1;
                     else return (2 * helper(st+1, end-1, s));
                 }
                 else {
-                    if(i - 1 == st) return 2 + helper(i+1, end, s);
+                    if(i - 1 == st) return 1 + helper(i+1, end, s);
                     else {
                         return (2 * helper(st+1, i-1, s)) + helper(i+1, end, s);
                     }
