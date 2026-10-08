@@ -5,7 +5,7 @@ public class Main2 {
         int a = 5;
         int b = 0;
         try{
-//            int c = divide(a, b);
+            int c = divide(a, b);
             throw new MyException("Falane");
         } catch (MyException e) {
             System.out.println(e.getMessage());
