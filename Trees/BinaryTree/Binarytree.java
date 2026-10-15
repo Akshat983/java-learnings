@@ -8,37 +8,37 @@ public class Binarytree {
     public Binarytree() {
     }
 
-    private static class Node {
+    private static class TreeNode {
         private int val;
-        private Node left;
-        private Node right;
+        private TreeNode left;
+        private TreeNode right;
 
-        public Node() {
+        public TreeNode() {
         }
 
-        public Node(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
     }
 
 
-    private Node root;
+    private TreeNode root;
 
     public void populate(Scanner sc) {
         System.out.println("Enter the root node: ");
         int val = sc.nextInt();
 
-        root = new Node(val);
+        root = new TreeNode(val);
 
         populate(sc, root);
     }
 
-    private void populate(Scanner sc, Node root) {
+    private void populate(Scanner sc, TreeNode root) {
         System.out.println("Do you want to enter the left node of " + root.val);
         boolean left = sc.nextBoolean();
         if(left) {
             System.out.println("Enter the value of the left node: ");
-            Node leftNode  = new Node(sc.nextInt());
+            TreeNode leftNode  = new TreeNode(sc.nextInt());
             root.left = leftNode;
             populate(sc, leftNode);
         }
@@ -47,7 +47,7 @@ public class Binarytree {
         boolean right = sc.nextBoolean();
         if(right) {
             System.out.println("Enter the value of the right node: ");
-            Node rightNode  = new Node(sc.nextInt());
+            TreeNode rightNode  = new TreeNode(sc.nextInt());
             root.left = rightNode;
             populate(sc, rightNode);
         }
@@ -57,7 +57,7 @@ public class Binarytree {
         display(root, 0);
     }
 
-    private void display(Node node, int level) {
+    private void display(TreeNode node, int level) {
         if (node == null) {
             return;
         }
@@ -76,7 +76,7 @@ public class Binarytree {
         preOrder(root);
     }
 
-    private void preOrder(Node node) {
+    private void preOrder(TreeNode node) {
         if(node == null) {
             return;
         }
@@ -92,7 +92,7 @@ public class Binarytree {
         postOrder(root);
     }
 
-    private void postOrder(Node node) {
+    private void postOrder(TreeNode node) {
         if(node == null) {
             return;
         }
@@ -108,7 +108,7 @@ public class Binarytree {
         inOrder(root);
     }
 
-    private void inOrder(Node node) {
+    private void inOrder(TreeNode node) {
         if(node == null) {
             return;
         }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 public class BFS {
-    public class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -20,7 +20,14 @@ public class BFS {
     }
 
     static void main(String[] args) {
+        TreeNode root = new TreeNode(12);
+        root.left = new TreeNode(24);
+        root.right = new TreeNode(36);
+        root.left.left = new TreeNode(1322);
+        root.right.left = new TreeNode(23);
 
+        BFS ob = new BFS();
+        System.out.println(ob.levelOrder(root));
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {

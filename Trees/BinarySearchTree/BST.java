@@ -2,13 +2,13 @@ package JavaByKK.Trees.BinarySearchTree;
 
 
 public class BST {
-    private static class Node {
+    private static class TreeNode {
         private int val;
-        private Node left;
-        private Node right;
+        private TreeNode left;
+        private TreeNode right;
         private int height;
 
-        public Node(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
 
@@ -17,12 +17,12 @@ public class BST {
         }
     }
 
-    private Node root;
+    private TreeNode root;
 
     public BST() {
     }
 
-    public int height(Node node) {
+    public int height(TreeNode node) {
         if(node == null) return -1;
         return node.height;
     }
@@ -33,16 +33,16 @@ public class BST {
 
     public void insert(int value) {
         if(root == null) {
-            root = new Node(value);
+            root = new TreeNode(value);
         }
         else {
             insert(value, root);
         }
     }
 
-    private Node insert(int value, Node node) {
+    private TreeNode insert(int value, TreeNode node) {
         if(node == null) {
-            node = new Node(value);
+            node = new TreeNode(value);
             return node;
         }
 
@@ -63,7 +63,7 @@ public class BST {
         return balancedTree(root);
     }
 
-    public boolean balancedTree(Node node) {
+    public boolean balancedTree(TreeNode node) {
         if(node == null) return true;
 
         return (Math.abs(height(node.left) - height(node.right)) <= 1) && balancedTree(node.left) && balancedTree(node.right);
@@ -73,7 +73,7 @@ public class BST {
         display(this.root, "The root is: ");
     }
 
-    private void display(Node node, String details) {
+    private void display(TreeNode node, String details) {
         if(node == null) return;
 
         System.out.println(details + node.val);
@@ -106,7 +106,7 @@ public class BST {
         preOrder(root);
     }
 
-    private void preOrder(Node node) {
+    private void preOrder(TreeNode node) {
         if(node == null) {
             return;
         }
@@ -121,7 +121,7 @@ public class BST {
         postOrder(root);
     }
 
-    private void postOrder(Node node) {
+    private void postOrder(TreeNode node) {
         if(node == null) {
             return;
         }
@@ -137,7 +137,7 @@ public class BST {
         inOrder(root);
     }
 
-    private void inOrder(Node node) {
+    private void inOrder(TreeNode node) {
         if(node == null) {
             return;
         }
