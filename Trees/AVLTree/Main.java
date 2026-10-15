@@ -1,4 +1,4 @@
-package JavaByKK.AVLTree;
+package JavaByKK.Trees.AVLTree;
 
 public class Main {
     static void main() {

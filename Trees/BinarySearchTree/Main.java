@@ -1,4 +1,4 @@
-package JavaByKK.BinarySearchTree;
+package JavaByKK.Trees.BinarySearchTree;
 
 import java.util.Arrays;
 

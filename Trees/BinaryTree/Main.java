@@ -1,4 +1,4 @@
-package JavaByKK.BinaryTree;
+package JavaByKK.Trees.BinaryTree;
 
 import java.util.Scanner;
 

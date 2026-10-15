@@ -1,4 +1,4 @@
-package JavaByKK.SegmentTree;
+package JavaByKK.Trees.SegmentTree;
 
 public class SegmentTree {
 

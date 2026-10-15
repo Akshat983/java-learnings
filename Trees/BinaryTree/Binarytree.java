@@ -1,6 +1,6 @@
-package JavaByKK.BinaryTree;
+package JavaByKK.Trees.BinaryTree;
 
-import JavaByKK.BinarySearchTree.BST;
+import JavaByKK.Trees.BinarySearchTree.BST;
 
 import java.util.Scanner;
 
